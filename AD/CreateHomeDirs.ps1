@@ -9,12 +9,12 @@
 #				Note: Any existing directories will be skipped, but ACLs will be applied
 
 $time = Get-Date
-Write-Host("Start time: " + $time.ToShortTimeString())
+Write-Host("Start time: $($time.ToShortTimeString())")
 
 Write-Host("Reading users...")
 #Get all AD Users :: Modify to suit your needs
 $users = Get-ADUser -Filter *
-Write-Host($users.Count + " users found!")
+Write-Host("$($users.Count) users found!")
 
 #Create a directory and set the ACL
 Write-Host("Creating directories...")
@@ -38,4 +38,4 @@ foreach($user in $users)
 Write-Host("Done!")
 
 $time = Get-Date
-Write-Host("End time: " + $time.ToShortTimeString())
+Write-Host("End time: $($time.ToShortTimeString())")
